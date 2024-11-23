@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2 class="text-center mt-3 mb-3">Employee Detail</h2>
+<div class="card mb-3 text-center mx-auto bg-warning" style="max-width: 650px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{emp.image.url}}" class="rounded-start" alt="..." height="300px" width="100%">
+    </div>
+    <div class="col-md-7 mt-5">
+      <div class="card-body">
+        <h5 class="card-title">EID: {{emp.eid}}</h5>
+        <p class="card-text">NAME:{{emp.name}}</p>
+        <p class="card-text">AGE:{{emp.age}}</p>
+        <p class="card-text">ADDRESS:{{emp.address}}</p>
+        <p class="card-text">EMAIL:{{emp.email}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

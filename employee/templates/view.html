@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<h2 class="text-center mb-3 mt-3">View Employees</h2>
+<table class="bg-light table table-bordered">
+    <tr>
+        <th>IMAGE</th>
+        <th>EID</th>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>ADDRESS</th>
+        <th>EMAIL</th>
+        <th>VIEW</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    {% for i in emp %}
+    <tr>
+        <td><img src="{{i.image.url}}" height="150px" width="150px"></td>
+        <td>{{i.eid}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.email}}</td>
+        <td><a href="{% url 'emp:details' i.id %}" class="btn btn-success">VIEW</a></td>
+        <td><a href="{% url 'emp:edit' i.id %}" class="btn btn-success">EDIT</a></td>
+        <td><a href="{% url 'emp:delete' i.id %}" class="btn btn-success">DELETE</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
